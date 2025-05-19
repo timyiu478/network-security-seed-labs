@@ -8,8 +8,9 @@ The SEED project started in 2002 by Wenliang Du, a professor at the Syracuse Uni
 
 ### Done
 
-| Lab Name | Status |  Notes |
-| ---      | ---    |  ---   |
+| Lab Name | Description | Status |  Notes |
+| ---      | --- | ---    |  ---   |
+| Sniffing/Spoofing | Sniffing packets sent over the local network and spoofing various types of packets using Python and C.  | TODO | [README](./labs/Sniffing_Spoofing/README.md)|
 
 ### TODO
 

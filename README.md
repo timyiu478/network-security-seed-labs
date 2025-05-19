@@ -8,7 +8,7 @@ The SEED project started in 2002 by Wenliang Du, a professor at the Syracuse Uni
 
 | Lab Name | Description |  Notes |
 | ---      | --- | ---   |
-| VPN Tunneling | build a simple VPN program using TUN/TAP interface | [README](./labs/VPN_Tunnel/README.md)|
+| VPN Tunneling | build a simple VPN program using TUN/TAP interface | [README](./labs/VPN_Tunnel/README.md), [DEMO](https://github.com/timyiu478/network-security-seed-labs/blob/main/labs/VPN_Tunnel/README.md#demo)|
 
 
 ## Related to Containers

@@ -22,7 +22,7 @@ the victim machine. The Compose file will be provided on the lab's website.
 
 ## Task 1: SYN Flood Attack
 
-![](assets/tcp_syn_flood_attack.png)
+![](assets/tcp_syn_flooding_attack.png)
 
 ### Related Linux kernel parameters
 
@@ -37,4 +37,4 @@ See [Labsetup/volume/synflood.py](./Labsetup/volume/synflood.py)
 
 ### Denied of Service Attack DEMO
 
-Watch [DEMO](./DEMO.md) to see how the SYN flood attack works.
+Watch [DEMO](https://github.com/timyiu478/network-security-seed-labs/edit/main/labs/TCP_Attacks/DEMO.md#demo) to see how the SYN flood attack works.

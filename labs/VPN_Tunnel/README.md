@@ -155,6 +155,7 @@ Source Codes: [Labsetup/volumes/tun_client.py](Labsetup/volumes/tun_client.py), 
 
 https://github.com/user-attachments/assets/7f13fe92-6091-4320-a251-2302fd49c0ca
 
+#### Remarks
 
-
-
+1. The VPN server host needs to enable IP forwarding to allow packets to be forwarded from host U/V to host V/U.
+2. The VPN server host needs to act as the gateway for the private network. It means the VPN server host needs to have a route to the private network and the private network needs to have a route to the VPN server host.

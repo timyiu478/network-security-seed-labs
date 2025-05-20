@@ -37,4 +37,4 @@ See [Labsetup/volume/synflood.py](./Labsetup/volume/synflood.py)
 
 ### Denied of Service Attack DEMO
 
-Watch [DEMO](https://github.com/timyiu478/network-security-seed-labs/edit/main/labs/TCP_Attacks/DEMO.md#demo) to see how the SYN flood attack works.
+Watch [DEMO](https://github.com/timyiu478/network-security-seed-labs/blob/main/labs/TCP_Attacks/DEMO.md#tcp-syn-flood-attack-for-denied-of-service-attack) to see how the SYN flood attack works.

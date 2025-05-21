@@ -1,4 +1,4 @@
-# Network Security Seed Labs
+# Seed Labs
 
 ## About
 

@@ -1,0 +1,20 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdftex 2024.12.14)  19 MAY 2025 14:07
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**VPN.tex
+(./VPN.tex
+! Undefined control sequence.
+l.9 \newcommand
+               {\commonfolder}{../../common-files}
+? 
+! Undefined control sequence.
+l.9 \newcommand{\commonfolder
+                             }{../../common-files}
+? 
+! Emergency stop.
+l.9 \newcommand{\commonfolder
+                             }{../../common-files}
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

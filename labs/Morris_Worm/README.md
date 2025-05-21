@@ -63,6 +63,41 @@ def createBadfile():
       f.write(content)
 ```
 
+Buffer Overflow Vulnerability:
+
+```c
+int bof(char *str)
+{
+    char buffer[BUF_SIZE];
+
+    // The following statement has a buffer overflow problem 
+    strcpy(buffer, str);       
+
+    return 1;
+}
+
+int main(int argc, char **argv)
+{
+    char str[517];
+
+    int length = fread(str, sizeof(char), 517, stdin);
+    printf("Input size: %d\n", length);
+    dummy_function(str);
+    fprintf(stdout, "==== Returned Properly ====\n");
+    return 1;
+}
+
+// This function is used to insert a stack frame of size
+// 1000 (approximately) between main's and bof's stack frames.
+// The function itself does not do anything.
+void dummy_function(char *str)
+{
+    char dummy_buffer[1000];
+    memset(dummy_buffer, 0, 1000);
+    bof(str);
+}
+```
+
 #### 2.3. Run the attack
 
 ```bash

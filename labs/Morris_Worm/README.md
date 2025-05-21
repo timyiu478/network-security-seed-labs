@@ -25,7 +25,7 @@ All the non-router containers in the emulator run the **same vulnerable server**
 
 #### Attack Idea
 
-![](assets/buffer_overflow_attack.png)
+![](assets/bof_shellcode_injection.png)
 
 #### 2.1. send a hello message to the target server for getting the address of the buffer and the frame pointer. The server will print out the address of the buffer and the frame pointer. The server will also print out the size of the input message. The address of the buffer and the frame pointer are printed in hexadecimal format.
 

@@ -7,6 +7,14 @@ The Morris worm (November 1988) was one of the oldest computer worms distributed
 - The SEED Internet emulator
 - Network tools
 
+## Source Code
+
+See [worm.py](https://github.com/timyiu478/seed-labs/blob/main/labs/Morris_Worm/Labsetup/worm/worm.py)
+
+## Morris Worm DEMO
+
+
+
 ## Task 1: Attack the First Target
 
 The worm exploit the Buffer-overflow vulnerability to allow the worm to run on the target machine.
@@ -240,6 +248,3 @@ def checkIfInfected(targetIP):
 
     return False
 ```
-
-## Morris Worm DEMO
-

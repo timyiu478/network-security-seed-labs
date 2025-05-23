@@ -13,6 +13,9 @@ See [worm.py](https://github.com/timyiu478/seed-labs/blob/main/labs/Morris_Worm/
 
 ## Morris Worm DEMO
 
+![image](https://github.com/user-attachments/assets/3060a3a3-5d32-4f77-a1b2-bff4728edf55)
+
+
 https://github.com/user-attachments/assets/b7efad04-5e24-4d8e-ad9e-127acf038a90
 
 ## Task 1: Attack the First Target

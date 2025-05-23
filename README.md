@@ -12,6 +12,7 @@ The SEED project started in 2002 by Wenliang Du, a professor at the Syracuse Uni
 | TCP SYN Flooding Attack | Denied of Service Attack on the Web Server via TCP SYN Flooding | [README](./labs/TCP_Attacks/README.md), [DEMO](https://github.com/timyiu478/network-security-seed-labs/blob/main/labs/TCP_Attacks/DEMO.md#tcp-syn-flood-attack-for-denied-of-service-attack)|
 | Morris Worm - Buffer Over Flow Attack | Inject shell code by exploiting the buffer overflow vulnerability | [README](./labs/Morris_Worm/README.md#task-1-attack-the-first-target), [DEMO](https://github.com/timyiu478/network-security-seed-labs/blob/main/labs/Morris_Worm/README.md#demo) |
 | Race Condition and SET-UID Vulnerabilities | Exploit race condition and SET-UID vulnerabilities for privileged esculation | [README](./labs/Race_Condition/README.md), [DEMO](https://github.com/timyiu478/seed-labs/blob/main/labs/Race_Condition/README.md#demo) |
+| Morris Worm - Self Duplication and Propagation | Write a simple internet worm and test it in internet emulator | [README](./labs/Morris_Worm/README.md#step-3-self-duplication), [DEMO](https://github.com/timyiu478/seed-labs/blob/main/labs/Morris_Worm/README.md#morris-worm-demo) |
 
 
 ## Related to Containers

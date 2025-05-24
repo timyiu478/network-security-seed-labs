@@ -15,7 +15,7 @@ int main(int argc, const char **argv) {
   for(i=0; i<10; i++) array[i*4096]=1;
   // FLUSH the array from the CPU cache
   for(i=0; i<10; i++) _mm_clflush(&array[i*4096]);
-  // Access some of the array items
+  // Access some of the array items so that they are in the CPU cache
   array[3*4096] = 100;
   array[7*4096] = 200;
   for(i=0; i<10; i++) {

@@ -13,7 +13,7 @@ uint8_t temp    = 0;
 char    *secret = "Some Secret Value";   
 uint8_t array[256*4096];
 
-#define CACHE_HIT_THRESHOLD (80)
+#define CACHE_HIT_THRESHOLD (40)
 #define DELTA 1024
 
 // Sandbox Function
@@ -91,6 +91,7 @@ int main() {
     reloadSideChannelImproved();
   }
 
+  // Find the maximum score
   int max = 0;
   for (i = 0; i < 256; i++){
     if(scores[max] < scores[i]) max = i;

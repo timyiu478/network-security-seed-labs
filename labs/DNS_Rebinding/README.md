@@ -80,3 +80,7 @@ ns      IN      A     10.9.0.153
 ![](assets/dns_rebinding_attack.png)
 
 
+
+https://github.com/user-attachments/assets/6f30cd87-d496-4dc4-9e05-10448c2b56aa
+
+

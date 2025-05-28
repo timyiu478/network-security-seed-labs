@@ -1,0 +1,71 @@
+\relax 
+\providecommand\zref@newlabel[2]{}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{Lipp2018meltdown}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Readings and videos.}{1}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Lab Environment.}{1}{section*.2}\protected@file@percent }
+\citation{Yarom2014}
+\@writefile{toc}{\contentsline {paragraph}{Acknowledgment}{2}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Code Compilation}{2}{section.2}\protected@file@percent }
+\newlabel{sidechannel:sec:compilation}{{2}{2}{Code Compilation}{section.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{For Ubuntu 16.04 OS.}{2}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{For Ubuntu 20.04 OS.}{2}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Tasks 1 and 2: Side Channel Attacks via CPU Caches}{2}{section.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Cache hit and miss}}{2}{figure.1}\protected@file@percent }
+\newlabel{sidechannel:fig:cachehitmiss}{{1}{2}{Cache hit and miss}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Task 1: Reading from Cache versus from Memory}{2}{subsection.3.1}\protected@file@percent }
+\citation{Yarom2014}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}\texttt  {CacheTime.c}}{3}{lstlisting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Task 2: Using Cache as a Side Channel}{3}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Diagram depicting the Side Channel Attack}}{4}{figure.2}\protected@file@percent }
+\newlabel{sidechannel:fig:flushreload}{{2}{4}{Diagram depicting the Side Channel Attack}{figure.2}{}}
+\newlabel{sidechannel:list:flushreload}{{2}{4}{\texttt {FlushReload.c}}{lstlisting.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}\texttt  {FlushReload.c}}{4}{lstlisting.2}\protected@file@percent }
+\citation{wiki:protectionring}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Tasks 3-5: Preparation for the Meltdown Attack}{6}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Task 3: Place Secret Data in Kernel Space}{6}{subsection.4.1}\protected@file@percent }
+\newlabel{meltdown:list:kernelmodule}{{3}{6}{\texttt {MeltdownKernel.c}}{lstlisting.3}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}\texttt  {MeltdownKernel.c}}{6}{lstlisting.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Compilation and execution.}{7}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Task 4: Access Kernel Memory from User Space}{7}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Task 5: Handle Error/Exceptions in C}{8}{subsection.4.3}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}\texttt  {ExceptionHandling.c}}{8}{lstlisting.4}\protected@file@percent }
+\citation{sigsetjmp}
+\citation{wiki:outoforder}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Task 6: Out-of-Order Execution by CPU}{9}{section.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Out-of-order execution inside CPU}}{10}{figure.3}\protected@file@percent }
+\newlabel{meltdown:fig:outoforder}{{3}{10}{Out-of-order execution inside CPU}{figure.3}{}}
+\newlabel{meltdown:list:outoforder}{{5}{10}{\texttt {MeltdownExperiment.c}}{lstlisting.5}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}\texttt  {MeltdownExperiment.c}}{10}{lstlisting.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Task 7: The Basic Meltdown Attack}{11}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Task 7.1: A Naive Approach}{11}{subsection.6.1}\protected@file@percent }
+\citation{meltdowdemo}
+\citation{boldin}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Task 7.2: Improve the Attack by Getting the Secret Data Cached}{12}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Task 7.3: Using Assembly Code to Trigger Meltdown}{12}{subsection.6.3}\protected@file@percent }
+\newlabel{meltdown:list:meltdown_asm}{{6}{12}{\texttt {meltdown\_asm()}}{lstlisting.6}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6}\texttt  {meltdown\_asm()}}{12}{lstlisting.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Task 8: Make the Attack More Practical}{13}{section.7}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7}\texttt  {MeltdownAttack.c}}{13}{lstlisting.7}\protected@file@percent }
+\bibstyle{plain}
+\bibdata{BibMeltdownSpectre}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Submission}{15}{section.8}\protected@file@percent }
+\gdef \@abspage@last{15}

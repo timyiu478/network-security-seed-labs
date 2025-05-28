@@ -14,7 +14,7 @@ The SEED project started in 2002 by Wenliang Du, a professor at the Syracuse Uni
 | Race Condition and SET-UID Vulnerabilities | Exploit race condition and SET-UID vulnerabilities for privileged esculation | [README](./labs/Race_Condition/README.md), [DEMO](https://github.com/timyiu478/seed-labs/blob/main/labs/Race_Condition/README.md#demo) |
 | Morris Worm - Self Duplication and Propagation | Write a simple internet worm and test it in internet emulator | [README](./labs/Morris_Worm/README.md#step-3-self-duplication), [DEMO](https://github.com/timyiu478/seed-labs/blob/main/labs/Morris_Worm/README.md#morris-worm-demo) |
 | Spectre Attack | Exploit CPU mechanism about out of order execution, branch prediction, and caching to access unauthorised memory region | [README](./labs/Spectre_Attack/README.md) |
-| DNS Rebinding Attack | Use DNS Rebinding technique to bypass the browser same origin policy | [README](./labs/DNS_Rebinding/README.md), [DEMO]() |
+| DNS Rebinding Attack | Use DNS Rebinding technique to bypass the browser same origin policy | [README](./labs/DNS_Rebinding/README.md), [DEMO](https://github.com/timyiu478/seed-labs/blob/main/labs/DNS_Rebinding/README.md#demo) |
 
 
 ## Related to Containers

@@ -1,4 +1,4 @@
-let url_prefix = 'http://www.seediot32.com'
+let url_prefix = 'http://www.attacker32.com'
 
 function updateTemperature() {
   $.get(url_prefix + '/password', function(data) {

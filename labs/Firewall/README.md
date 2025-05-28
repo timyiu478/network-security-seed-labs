@@ -1,9 +1,8 @@
 # Firewall Exploration Lab
 
+## Task 1: Implementing a Simple Firewall
 
-## Update on 1/15/2021
 
-This lab is redesigned. 
 
 
 ## For Ubuntu 20.04 VM

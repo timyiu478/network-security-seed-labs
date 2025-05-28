@@ -1,4 +1,4 @@
-FROM handsonsecurity/seed-server:bind-arm
+FROM handsonsecurity/seed-server:bind
 
 # Copy the configuration file for the local DNS server
 COPY named.conf           /etc/bind/
